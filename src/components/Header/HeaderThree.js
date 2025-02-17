@@ -1,9 +1,9 @@
-import { useRootContext } from "@/context/context";
-import headerData from "@/data/header";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
-import NavItem from "./NavItem";
+import { useRootContext } from '@/context/context';
+import headerData from '@/data/header';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import NavItem from './NavItem';
 
 const { title, navItems, socials, logo10 } = headerData;
 
@@ -15,7 +15,7 @@ const HeaderThree = () => {
       <header className="main-header header-style-nine">
         <div className="header-style-nine__inner">
           <div className="logo-box">
-            <Link href="/index-main">
+            <Link legacyBehavior href="/index-main">
               <a>
                 <Image src={logo10.src} width={35} height={34} alt={title} />
               </a>

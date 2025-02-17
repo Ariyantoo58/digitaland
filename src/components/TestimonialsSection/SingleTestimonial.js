@@ -1,9 +1,9 @@
-import Link from "next/link";
-import React, { forwardRef } from "react";
-import { Image } from "react-bootstrap";
+import Link from 'next/link';
+import React, { forwardRef } from 'react';
+import { Image } from 'react-bootstrap';
 
 const SingleTestimonial = (
-  { testimonial = {}, className = "", userSelect = false },
+  { testimonial = {}, className = '', userSelect = false },
   ref
 ) => {
   const { image, name, text, designation } = testimonial;
@@ -11,7 +11,7 @@ const SingleTestimonial = (
   return (
     <div
       ref={ref}
-      style={{ userSelect: userSelect ? "auto" : "none" }}
+      style={{ userSelect: userSelect ? 'auto' : 'none' }}
       className={`testi-block ${className}`}
     >
       <div className="inner">
@@ -20,7 +20,7 @@ const SingleTestimonial = (
         </div>
         <div className="info">
           <div className="image">
-            <Link href="/team">
+            <Link legacyBehavior href="/team">
               <a>
                 <Image
                   src={require(`@/images/resource/${image}`).default.src}

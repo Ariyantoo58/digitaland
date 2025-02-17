@@ -1,22 +1,21 @@
-import { bannerSectionFour } from "@/data/bannerSection";
-import React from "react";
-import { Col, Row } from "react-bootstrap";
-import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import TextSplit from "../Reuseable/TextSplit";
-
-SwiperCore.use([Autoplay, EffectFade, Navigation]);
+import { bannerSectionFour } from '@/data/bannerSection';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import SwiperCore, { Autoplay, EffectFade, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import TextSplit from '../Reuseable/TextSplit';
 
 const options = {
   slidesPerView: 1,
   loop: true,
-  effect: "fade",
+  effect: 'fade',
   autoplay: {
     delay: 5000,
   },
+  module: [Autoplay, EffectFade, Navigation],
   navigation: {
-    nextEl: "#banner-section-four__swiper-button-next",
-    prevEl: "#banner-section-four__swiper-button-prev",
+    nextEl: '#banner-section-four__swiper-button-next',
+    prevEl: '#banner-section-four__swiper-button-prev',
   },
 };
 

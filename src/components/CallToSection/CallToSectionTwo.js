@@ -1,9 +1,9 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 const CallToSectionTwo = ({
-  className = "",
-  btnClassName = "btn-style-two",
+  className = '',
+  btnClassName = 'btn-style-two',
 }) => {
   return (
     <section className={`call-to-section-two ${className}`}>
@@ -13,7 +13,7 @@ const CallToSectionTwo = ({
             We’re Ready to Bring Bigger <br />& Stronger Projects
           </h2>
           <div className="link-box">
-            <Link href="/contact">
+            <Link legacyBehavior href="/contact">
               <a className={`theme-btn ${btnClassName}`}>
                 <i className="btn-curve"></i>
                 <span className="btn-title">Contact with us</span>

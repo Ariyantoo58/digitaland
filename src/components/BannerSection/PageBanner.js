@@ -1,12 +1,12 @@
-import bg from "@/images/background/image-7.jpg";
-import Link from "next/link";
-import React from "react";
+import bg from '@/images/background/image-7.jpg';
+import Link from 'next/link';
+import React from 'react';
 
 const PageBanner = ({
-  title = "",
-  page = "",
-  parent = "",
-  parentHref = "/",
+  title = '',
+  page = '',
+  parent = '',
+  parentHref = '/',
 }) => {
   return (
     <section className="page-banner">
@@ -23,11 +23,15 @@ const PageBanner = ({
             <div className="page-nav">
               <ul className="bread-crumb clearfix">
                 <li>
-                  <Link href="/index-main">Home</Link>
+                  <Link legacyBehavior href="/index-main">
+                    Home
+                  </Link>
                 </li>
                 {parent && (
                   <li>
-                    <Link href={parentHref}>{parent}</Link>
+                    <Link legacyBehavior href={parentHref}>
+                      {parent}
+                    </Link>
                   </li>
                 )}
                 <li className="active">{page || title}</li>

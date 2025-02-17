@@ -1,9 +1,9 @@
-import { socials } from "@/data/header";
-import { productDetails } from "@/data/productDetails";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { socials } from '@/data/header';
+import { productDetails } from '@/data/productDetails';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const { image, title, price, stars, customerReviews, text, text2 } =
   productDetails;
@@ -70,13 +70,13 @@ const ProductDetailsPage = () => {
               </div>
             </div>
             <div className="product-details__buttons">
-              <Link href="/cart">
+              <Link legacyBehavior href="/cart">
                 <a className="theme-btn btn-style-two">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Add to wishlist</span>
                 </a>
               </Link>
-              <Link href="/cart">
+              <Link legacyBehavior href="/cart">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Add to cart</span>

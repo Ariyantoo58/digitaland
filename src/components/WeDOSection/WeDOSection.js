@@ -1,8 +1,8 @@
-import weDOSection from "@/data/weDOSection";
-import React, { useState } from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import VisibilitySensor from "react-visibility-sensor";
-import TextSplit from "../Reuseable/TextSplit";
+import weDOSection from '@/data/weDOSection';
+import React, { useState } from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import VisibilitySensor from 'react-visibility-sensor';
+import TextSplit from '../Reuseable/TextSplit';
 
 const { title, featuredImage, text, barTitle, barPercent, faqs } = weDOSection;
 
@@ -36,7 +36,7 @@ const WeDOSection = () => {
               </div>
               <div className="progress-box">
                 <div className="bar-title">{barTitle}</div>
-                <VisibilitySensor
+                {/* <VisibilitySensor
                   offset={{ top: 10 }}
                   delayedCall={true}
                   onChange={onVisibilityChange}
@@ -57,7 +57,7 @@ const WeDOSection = () => {
                       </div>
                     </div>
                   </div>
-                </VisibilitySensor>
+                </VisibilitySensor> */}
               </div>
             </div>
           </Col>
@@ -69,20 +69,20 @@ const WeDOSection = () => {
                     <li
                       key={id}
                       className={`accordion block${
-                        currentFaq === id ? " active-block" : ""
+                        currentFaq === id ? ' active-block' : ''
                       }`}
                     >
                       <div
                         onClick={() => setCurrentFaq(id)}
                         className={`acc-btn${
-                          currentFaq === id ? " active" : ""
+                          currentFaq === id ? ' active' : ''
                         }`}
                       >
                         <span className="count">{id}.</span> {title}
                       </div>
                       <div
                         className={`acc-content animated${
-                          currentFaq === id ? " current slideInUp" : ""
+                          currentFaq === id ? ' current slideInUp' : ''
                         }`}
                       >
                         <div className="content">

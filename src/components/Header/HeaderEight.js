@@ -1,10 +1,10 @@
-import { useRootContext } from "@/context/context";
-import headerData from "@/data/header";
-import useScroll from "@/hooks/useScroll";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
-import NavItem from "./NavItem";
+import { useRootContext } from '@/context/context';
+import headerData from '@/data/header';
+import useScroll from '@/hooks/useScroll';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import NavItem from './NavItem';
 
 const { navItems, title, title3, logo8, socials, email, address, phone2 } =
   headerData;
@@ -40,13 +40,13 @@ const HeaderEight = () => {
 
       <nav
         className={`mainmenu-eight main-header${
-          scrollTop ? " fixed-header" : ""
+          scrollTop ? ' fixed-header' : ''
         }`}
       >
         <div className="auto-container">
           <div className="nav-outer mainmenu-eight__inner ">
             <div className="mainmenu-eight__left">
-              <Link href="/index-main">
+              <Link legacyBehavior href="/index-main">
                 <a>
                   <Image src={logo8.src} width={134} alt={title} />
                 </a>
@@ -81,7 +81,7 @@ const HeaderEight = () => {
               </div>
 
               <a
-                href={`tel:${phone2.split(" ").join("")}`}
+                href={`tel:${phone2.split(' ').join('')}`}
                 className="mainmenu-eight__call"
               >
                 <span className="mainmenu-eight__call__icon">

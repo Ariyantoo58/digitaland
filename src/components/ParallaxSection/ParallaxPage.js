@@ -1,9 +1,9 @@
-import { parallaxPage } from "@/data/parallaxSection";
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import React from "react";
-import JarallaxImage from "../Jarallax/JarallaxImage";
-const Jarallax = dynamic(() => import("../Jarallax/Jarallax"), { ssr: false });
+import { parallaxPage } from '@/data/parallaxSection';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import React from 'react';
+import JarallaxImage from '../Jarallax/JarallaxImage';
+const Jarallax = dynamic(() => import('../Jarallax/Jarallax'), { ssr: false });
 
 const ParallaxPage = () => {
   return (
@@ -21,7 +21,7 @@ const ParallaxPage = () => {
           <div className="auto-container">
             <div className="parallax-block__content">
               <h3>{title}</h3>
-              <Link href="/portfolio">
+              <Link legacyBehavior href="/portfolio">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Discover More</span>

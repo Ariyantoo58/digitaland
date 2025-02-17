@@ -1,16 +1,15 @@
-import { projectEight } from "@/data/projectSection";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
-import SwiperCore, { Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-SwiperCore.use([Autoplay]);
+import { projectEight } from '@/data/projectSection';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import SwiperCore, { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const options = {
   spaceBetween: 30,
   slidesPerView: 2,
   autoplay: { delay: 5000 },
+  module: [Autoplay],
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -53,13 +52,15 @@ const ProjectEight = () => {
                     alt=""
                   />
                   <div className="project-eight__content">
-                    <Link href="/portfolio-single">
+                    <Link legacyBehavior href="/portfolio-single">
                       <a className="project-eight__link">
                         <i className="flaticon-right-arrow"></i>
                       </a>
                     </Link>
                     <h3 className="project-eight__title">
-                      <Link href="/portfolio-single">{title}</Link>
+                      <Link legacyBehavior href="/portfolio-single">
+                        {title}
+                      </Link>
                     </h3>
                   </div>
                 </div>

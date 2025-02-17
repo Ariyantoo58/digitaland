@@ -1,7 +1,7 @@
-import brandPortfolio from "@/data/brandPortfolio";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
+import brandPortfolio from '@/data/brandPortfolio';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
 
 const BrandPortfolio = () => {
   return (
@@ -24,7 +24,7 @@ const BrandPortfolio = () => {
             </div>
             <div className="brand-portfolio__content">
               <h2 className="brand-portfolio__title">{title}</h2>
-              <Link href="/portfolio-single">
+              <Link legacyBehavior href="/portfolio-single">
                 <a className="brand-portfolio__link">
                   checkout some of our recent work
                   <span className="flaticon-arrows-10"></span>

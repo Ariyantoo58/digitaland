@@ -1,7 +1,7 @@
-import { featureSeven } from "@/data/featuresSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { featureSeven } from '@/data/featuresSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const { title, features } = featureSeven;
 
@@ -31,7 +31,9 @@ const FeatureSeven = () => {
                   </div>
                   <div className="feature-seven-card__content">
                     <h3 className="feature-seven-card__title">
-                      <Link href={href}>{title}</Link>
+                      <Link legacyBehavior href={href}>
+                        {title}
+                      </Link>
                     </h3>
                     <p className="feature-seven-card__text">{text}</p>
                   </div>

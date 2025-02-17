@@ -1,15 +1,14 @@
-import { sponsorEight } from "@/data/sponsorsSection";
-import React from "react";
-import { Image } from "react-bootstrap";
-import SwiperCore, { Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-SwiperCore.use([Autoplay]);
+import { sponsorEight } from '@/data/sponsorsSection';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import SwiperCore, { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const options = {
   spaceBetween: 100,
   slidesPerView: 5,
   autoplay: { delay: 5000 },
+  module: [Autoplay],
   breakpoints: {
     0: {
       spaceBetween: 30,

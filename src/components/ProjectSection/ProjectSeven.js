@@ -1,15 +1,14 @@
-import { projectSeven } from "@/data/projectSection";
-import React from "react";
-import SwiperCore, { Autoplay } from "swiper";
-import { Swiper } from "swiper/react";
-import SingleProject from "./SingleProject";
-
-SwiperCore.use([Autoplay]);
+import { projectSeven } from '@/data/projectSection';
+import React from 'react';
+import SwiperCore, { Autoplay } from 'swiper';
+import { Swiper } from 'swiper/react';
+import SingleProject from './SingleProject';
 
 const options = {
   spaceBetween: 30,
   slidesPerView: 2,
   autoplay: { delay: 5000 },
+  module: [Autoplay],
   breakpoints: {
     0: {
       slidesPerView: 1,

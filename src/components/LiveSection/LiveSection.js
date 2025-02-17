@@ -1,12 +1,12 @@
-import liveSection from "@/data/liveSection";
-import Link from "next/link";
-import React, { useState } from "react";
-import TextSplit from "../Reuseable/TextSplit";
-import VideoModal from "../VideoModal/VideoModal";
+import liveSection from '@/data/liveSection';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import TextSplit from '../Reuseable/TextSplit';
+import VideoModal from '../VideoModal/VideoModal';
 
 const { secTitle, bg, videoId, title } = liveSection;
 
-const LiveSection = ({ className = "" }) => {
+const LiveSection = ({ className = '' }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -41,7 +41,9 @@ const LiveSection = ({ className = "" }) => {
                     </h3>
                   </div>
                   <div className="more-link">
-                    <Link href="/about">Read More</Link>
+                    <Link legacyBehavior href="/about">
+                      Read More
+                    </Link>
                   </div>
                 </div>
               </div>

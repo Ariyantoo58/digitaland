@@ -1,8 +1,8 @@
-import { mainFooter } from "@/data/mainFooter";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { mainFooter } from '@/data/mainFooter';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const { year, author, socials, address2, phone2, email, about3, logo8 } =
   mainFooter;
@@ -35,7 +35,7 @@ const FooterEight = () => {
                 <p>
                   <a href={`mailto:${email}`}>{email}</a>
                   <br />
-                  <a href={`tel:${phone2.split(" ").join("")}`}>{phone2}</a>
+                  <a href={`tel:${phone2.split(' ').join('')}`}>{phone2}</a>
                 </p>
               </div>
             </Col>
@@ -54,7 +54,7 @@ const FooterEight = () => {
       </footer>
       <div className="footer-eight__copyright">
         <div className="auto-container">
-          <Link href="/index-main">
+          <Link legacyBehavior href="/index-main">
             <a>
               <Image src={logo8.src} width={101} alt="" />
             </a>

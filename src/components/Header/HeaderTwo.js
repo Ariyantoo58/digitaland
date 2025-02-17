@@ -1,28 +1,28 @@
-import { useRootContext } from "@/context/context";
-import headerData from "@/data/header";
-import useScroll from "@/hooks/useScroll";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
-import NavItem from "./NavItem";
+import { useRootContext } from '@/context/context';
+import headerData from '@/data/header';
+import useScroll from '@/hooks/useScroll';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import NavItem from './NavItem';
 
 const { navItems, title, logo7 } = headerData;
 
-const HeaderTwo = ({ headerStyle = "mainmenu-six", header = 6 }) => {
+const HeaderTwo = ({ headerStyle = 'mainmenu-six', header = 6 }) => {
   const { scrollTop } = useScroll(120);
   const { toggleSearch, toggleMenu } = useRootContext();
 
   return (
     <nav
       className={`${headerStyle} main-header${
-        scrollTop ? " fixed-header" : ""
+        scrollTop ? ' fixed-header' : ''
       }`}
     >
       <div className="auto-container">
         <div className={`${headerStyle}__inner nav-outer`}>
           {header === 7 && (
             <div className="mainmenu-seven__left">
-              <Link href="/index-main">
+              <Link legacyBehavior href="/index-main">
                 <a>
                   <Image src={logo7.src} width={134} alt={title} />
                 </a>
@@ -52,7 +52,7 @@ const HeaderTwo = ({ headerStyle = "mainmenu-six", header = 6 }) => {
                   <span className="flaticon-magnifying-glass"></span>
                 </button>
               </div>
-              <Link href="/contact">
+              <Link legacyBehavior href="/contact">
                 <a className="thm-btn__six mainmenu-six__btn">
                   Get a Free Quote
                 </a>

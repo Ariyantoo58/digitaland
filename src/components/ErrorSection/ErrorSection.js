@@ -1,7 +1,7 @@
-import { errorSection } from "@/data/errorSection";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
+import { errorSection } from '@/data/errorSection';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
 
 const { image, title, text } = errorSection;
 
@@ -9,7 +9,7 @@ const ErrorSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const fromData = new FormData(e.target);
-    console.log(fromData.get("email"));
+    console.log(fromData.get('email'));
   };
 
   return (
@@ -42,7 +42,7 @@ const ErrorSection = () => {
             </form>
           </div>
           <div className="link-box">
-            <Link href="/index-main">
+            <Link legacyBehavior href="/index-main">
               <a className="theme-btn btn-style-one">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Back to home</span>

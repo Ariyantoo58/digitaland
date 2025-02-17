@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Col, Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image } from 'react-bootstrap';
 
 const SingleEventsOne = ({ event = {} }) => {
   const { title, image, date, time, address } = event;
@@ -10,7 +10,7 @@ const SingleEventsOne = ({ event = {} }) => {
       <div className="events-one__item">
         <div className="events-one__image">
           <div className="events-one__date">{date}</div>
-          <Link href="/event-details">
+          <Link legacyBehavior href="/event-details">
             <a>
               <Image
                 src={
@@ -24,7 +24,9 @@ const SingleEventsOne = ({ event = {} }) => {
         </div>
         <div className="events-one__content">
           <h3 className="events-one__title">
-            <Link href="/event-details">{title}</Link>
+            <Link legacyBehavior href="/event-details">
+              {title}
+            </Link>
           </h3>
           <ul className="events-one__meta list-unstyled">
             <li>

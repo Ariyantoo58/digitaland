@@ -1,10 +1,8 @@
-import { testimonialsSeven } from "@/data/testimonialsSection";
-import React from "react";
-import SwiperCore, { Autoplay, Navigation } from "swiper";
-import { Swiper } from "swiper/react";
-import SingleTestimonialSeven from "./SingleTestimonialSeven";
-
-SwiperCore.use([Autoplay, Navigation]);
+import { testimonialsSeven } from '@/data/testimonialsSection';
+import React from 'react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper } from 'swiper/react';
+import SingleTestimonialSeven from './SingleTestimonialSeven';
 
 const options = {
   spaceBetween: 30,
@@ -12,9 +10,10 @@ const options = {
   slidesPerGroup: 3,
   autoplay: { delay: 5000 },
   navigation: {
-    nextEl: "#testimonials-seven__swiper-button-next",
-    prevEl: "#testimonials-seven__swiper-button-prev",
+    nextEl: '#testimonials-seven__swiper-button-next',
+    prevEl: '#testimonials-seven__swiper-button-prev',
   },
+  modules: [Autoplay, Navigation],
   breakpoints: {
     0: {
       spaceBetween: 0,

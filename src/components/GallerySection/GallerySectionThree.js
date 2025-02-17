@@ -1,7 +1,7 @@
-import { gallerySectionThree } from "@/data/gallerySection";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { gallerySectionThree } from '@/data/gallerySection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const { tagline, title, items } = gallerySectionThree;
 
@@ -27,7 +27,9 @@ const GallerySectionThree = () => {
                 <div className="gallery-item-three__content">
                   <p>{tagline}</p>
                   <h3>
-                    <Link href="/portfolio-single">{title}</Link>
+                    <Link legacyBehavior href="/portfolio-single">
+                      {title}
+                    </Link>
                   </h3>
                 </div>
               </div>

@@ -17,7 +17,7 @@ const DemoHeader = () => {
         <div className="inner-container clearfix">
           <div className="logo-box">
             <div className="logo">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a title="Digitaland - DIgital Agency HTML Template">
                   <Image
                     src={logo.src}

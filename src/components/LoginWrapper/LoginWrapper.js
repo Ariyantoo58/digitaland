@@ -30,7 +30,7 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
         <div className="login-content__inner">
           <div className="logo-box">
             <div className="logo text-center">
-              <Link href="/">
+              <Link legacyBehavior href="/">
                 <a title={logoTitle}>
                   <Image
                     src={logo.src}
@@ -62,7 +62,9 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
                 {forgot ? (
                   <TextSplit text={forgotText} />
                 ) : (
-                  <Link href="/forgot-password">Forgot your password?</Link>
+                  <Link legacyBehavior href="/forgot-password">
+                    Forgot your password?
+                  </Link>
                 )}
               </p>
             )}
@@ -79,7 +81,7 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
           </form>
           <p className="signup-link">
             {register ? 'Already have an Account?' : 'New to digitaland?'}{' '}
-            <Link href={register ? '/login' : '/register'}>
+            <Link legacyBehavior href={register ? '/login' : '/register'}>
               {register ? 'Login Here' : 'Signup'}
             </Link>
           </p>

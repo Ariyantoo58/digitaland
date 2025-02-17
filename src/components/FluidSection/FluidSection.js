@@ -1,7 +1,7 @@
-import fluidSection from "@/data/fluidSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import fluidSection from '@/data/fluidSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const FluidSection = () => {
   return (
@@ -22,7 +22,7 @@ const FluidSection = () => {
                 <div className="content-box">
                   <h3>{title}</h3>
                   <div className="link-box">
-                    <Link href={href}>
+                    <Link legacyBehavior href={href}>
                       <a className={`theme-btn ${btnClassName}`}>
                         <i className="btn-curve"></i>
                         <span className="btn-title">Discover More</span>

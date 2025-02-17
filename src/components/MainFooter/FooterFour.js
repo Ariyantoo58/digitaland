@@ -10,7 +10,7 @@ const FooterFour = () => {
     <section className="footer-four">
       <div className="auto-container">
         <div className="logo-box">
-          <Link href="/index-main">
+          <Link legacyBehavior href="/index-main">
             <a>
               <Image
                 src={logo5.src}

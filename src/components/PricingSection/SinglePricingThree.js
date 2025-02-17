@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Col } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Col } from 'react-bootstrap';
 
 const SinglePricingThree = ({ pricing = {} }) => {
   const { icon, name, amount, employees, tagline } = pricing;
@@ -20,7 +20,7 @@ const SinglePricingThree = ({ pricing = {} }) => {
           <li>{employees}/6 Employees</li>
         </ul>
         <p className="pricing-three__tagline">{tagline}</p>
-        <Link href="/contact">
+        <Link legacyBehavior href="/contact">
           <a className="theme-btn btn-style-two">
             <i className="btn-curve"></i>
             <span className="btn-title">Choose a plan</span>

@@ -1,8 +1,8 @@
-import discoverSection from "@/data/discoverSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import discoverSection from '@/data/discoverSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const { title, discovers } = discoverSection;
 
@@ -32,7 +32,7 @@ const DiscoverSection = ({ ShowTitle = true }) => {
                   <div className="cap-inner">
                     <h5>{title}</h5>
                     <div className="more-link">
-                      <Link href="/about">
+                      <Link legacyBehavior href="/about">
                         <a>
                           <span className="fa fa-angle-right"></span>
                         </a>

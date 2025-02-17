@@ -1,8 +1,8 @@
-import demoGallery from "@/data/demoGallery";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Row } from "react-bootstrap";
-import SingleBox from "./SingleBox";
+import demoGallery from '@/data/demoGallery';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { Row } from 'react-bootstrap';
+import SingleBox from './SingleBox';
 
 const { title, filters, portfolios } = demoGallery;
 
@@ -11,14 +11,14 @@ const masonryOptions = {
 };
 
 const getFilteredPortfolios = (filterData) =>
-  filterData === "all"
+  filterData === 'all'
     ? portfolios
     : portfolios.filter((project) => project.filter === filterData);
 
 const getCount = (filterData) => getFilteredPortfolios(filterData).length;
 
 const DemoGallery = () => {
-  const [currentFilter, setCurrentFilter] = useState("all");
+  const [currentFilter, setCurrentFilter] = useState('all');
   const filteredPortfolios = getFilteredPortfolios(currentFilter);
 
   return (
@@ -33,7 +33,7 @@ const DemoGallery = () => {
               <li
                 onClick={() => setCurrentFilter(filter)}
                 key={id}
-                className={`filter${currentFilter === filter ? " active" : ""}`}
+                className={`filter${currentFilter === filter ? ' active' : ''}`}
                 data-role="button"
               >
                 {title}
@@ -49,7 +49,7 @@ const DemoGallery = () => {
         </Row>
 
         <div className="text-center">
-          <Link href="/about">
+          <Link legacyBehavior href="/about">
             <a className="theme-btn btn-style-one">
               <i className="btn-curve"></i>
               <span className="btn-title">Discover More</span>

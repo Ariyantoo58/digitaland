@@ -1,9 +1,9 @@
-import { socials } from "@/data/header";
-import { underConstructionSection } from "@/data/underConstructionSection";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
-import CountdownOne from "../Reuseable/CountdownOne";
+import { socials } from '@/data/header';
+import { underConstructionSection } from '@/data/underConstructionSection';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import CountdownOne from '../Reuseable/CountdownOne';
 
 const { bg, logo, logoTitle, tagline, title, text } = underConstructionSection;
 
@@ -16,7 +16,7 @@ const UnderConstructionSection = () => {
       ></div>
       <div className="auto-container text-center">
         <div className="logo">
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a title={logoTitle}>
               <Image
                 src={logo.src}

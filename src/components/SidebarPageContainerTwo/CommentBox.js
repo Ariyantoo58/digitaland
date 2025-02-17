@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
 
 const CommentBox = ({ comment = {} }) => {
   const { image, name, date, text } = comment;
@@ -22,7 +22,7 @@ const CommentBox = ({ comment = {} }) => {
         </div>
         <div className="text">{text}</div>
         <div className="reply-btn">
-          <Link href="/about">
+          <Link legacyBehavior href="/about">
             <a className="theme-btn btn-style-one">
               <i className="btn-curve"></i>
               <span className="btn-title">Reply</span>

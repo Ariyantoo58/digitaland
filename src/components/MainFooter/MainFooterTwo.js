@@ -1,8 +1,8 @@
-import { mainFooter } from "@/data/mainFooter";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { mainFooter } from '@/data/mainFooter';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const {
   about,
@@ -26,7 +26,7 @@ const MainFooterTwo = () => {
             <div className="footer-widget">
               <h3>About</h3>
               <p>{about}</p>
-              <Link href="/contact">
+              <Link legacyBehavior href="/contact">
                 <a className="theme-btn btn-style-three">Get Started</a>
               </Link>
             </div>
@@ -37,7 +37,9 @@ const MainFooterTwo = () => {
               <ul className="list-unstyled footer-widget__links">
                 {links.map(({ id, href, title }) => (
                   <li key={id}>
-                    <Link href={href}>{title}</Link>
+                    <Link legacyBehavior href={href}>
+                      {title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -61,7 +63,9 @@ const MainFooterTwo = () => {
                     <div className="content">
                       <p>{date}</p>
                       <h4>
-                        <Link href="/blog-single">{title}</Link>
+                        <Link legacyBehavior href="/blog-single">
+                          {title}
+                        </Link>
                       </h4>
                     </div>
                   </li>
@@ -75,7 +79,7 @@ const MainFooterTwo = () => {
               <ul className="list-unstyled contact-list">
                 <li>
                   <span className="icon flaticon-call"></span>
-                  <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
+                  <a href={`tel:${phone.split(' ').join('')}`}>{phone}</a>
                 </li>
                 <li>
                   <span className="icon flaticon-email-2"></span>
@@ -93,7 +97,7 @@ const MainFooterTwo = () => {
       <div className="bottom-footer">
         <div className="auto-container">
           <div className="left-content">
-            <Link href="/index-main">
+            <Link legacyBehavior href="/index-main">
               <a>
                 <Image src={logo3.src} width={134} height={34} alt="" />
               </a>

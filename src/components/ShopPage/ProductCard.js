@@ -21,13 +21,18 @@ const ProductCard = ({ product = {} }) => {
         <div className="product-card__image">
           <Image src={image_link} alt="" />
           <div className="product-card__buttons">
-            <Link href={live_link} target="_blank" rel="noopener noreferrer">
+            <Link
+              legacyBehavior
+              href={live_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <a className="theme-btn btn-style-one">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Live view</span>
               </a>
             </Link>
-            <Link href="/product-details">
+            <Link legacyBehavior href="/product-details">
               <a className="theme-btn btn-style-two">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Detail</span>
@@ -37,7 +42,9 @@ const ProductCard = ({ product = {} }) => {
         </div>
         <div className="product-card__content">
           <h3 className="product-card__title">
-            <Link href="/product-details">{title}</Link>
+            <Link legacyBehavior href="/product-details">
+              {title}
+            </Link>
           </h3>
           <p className="product-card__price">${price}</p>
           <div className="product-card__stars">

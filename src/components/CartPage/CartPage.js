@@ -1,8 +1,8 @@
-import { cartPage } from "@/data/cartPage";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import CartProduct from "./CartProduct";
+import { cartPage } from '@/data/cartPage';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { Col, Row } from 'react-bootstrap';
+import CartProduct from './CartProduct';
 
 const { items, products: defaultProducts } = cartPage;
 
@@ -41,7 +41,7 @@ const CartPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("couponCode"));
+    console.log(formData.get('couponCode'));
   };
 
   const subtotal = products.reduce(
@@ -109,13 +109,13 @@ const CartPage = () => {
               </li>
             </ul>
             <div className="cart-page__buttons">
-              <Link href="/cart">
+              <Link legacyBehavior href="/cart">
                 <a className="theme-btn btn-style-two">
                   <i className="btn-curve"></i>
                   <span className="btn-title">update</span>
                 </a>
               </Link>
-              <Link href="/checkout">
+              <Link legacyBehavior href="/checkout">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Checkout</span>

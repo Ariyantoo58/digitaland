@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Col, Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image } from 'react-bootstrap';
 
 const SingleBlogSeven = ({ blog = {} }) => {
   const { image, date, admin, comments, title } = blog;
@@ -28,7 +28,9 @@ const SingleBlogSeven = ({ blog = {} }) => {
             </a>
           </div>
           <h3 className="blog-seven__title">
-            <Link href="/blog-single">{title}</Link>
+            <Link legacyBehavior href="/blog-single">
+              {title}
+            </Link>
           </h3>
         </div>
       </div>

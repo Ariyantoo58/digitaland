@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
 
 const NewsBlockTwo = ({ news = {}, handleOpen }) => {
   const { image, date, admin, comments, title, text, showVideo } = news;
@@ -9,7 +9,7 @@ const NewsBlockTwo = ({ news = {}, handleOpen }) => {
     <div className="news-block-two">
       <div className="inner-box">
         <div className="image-box">
-          <Link href="/blog-single">
+          <Link legacyBehavior href="/blog-single">
             <a>
               <Image
                 src={require(`@/images/resource/${image}`).default.src}
@@ -40,11 +40,13 @@ const NewsBlockTwo = ({ news = {}, handleOpen }) => {
             </ul>
           </div>
           <h4>
-            <Link href="/blog-single">{title}</Link>
+            <Link legacyBehavior href="/blog-single">
+              {title}
+            </Link>
           </h4>
           <div className="text">{text}</div>
           <div className="link-box">
-            <Link href="/blog-single">
+            <Link legacyBehavior href="/blog-single">
               <a className="theme-btn">Read More</a>
             </Link>
           </div>

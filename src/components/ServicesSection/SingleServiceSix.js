@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Col, Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image } from 'react-bootstrap';
 
 const SingleServiceSix = ({ service = {} }) => {
   const { image, title, href, icon, text } = service;
@@ -22,7 +22,9 @@ const SingleServiceSix = ({ service = {} }) => {
             <i className={icon}></i>
           </div>
           <h3 className="service-six__title">
-            <Link href={href}>{title}</Link>
+            <Link legacyBehavior href={href}>
+              {title}
+            </Link>
           </h3>
           <div className="service-six__text">{text}</div>
         </div>

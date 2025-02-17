@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
 
 const CartProduct = ({ product = {}, handleQuantity, handleRemove }) => {
   const { id, image, title, price, quantity } = product;
@@ -17,7 +17,9 @@ const CartProduct = ({ product = {}, handleQuantity, handleRemove }) => {
             alt=""
           />
           <h3>
-            <Link href="/product-details">{title}</Link>
+            <Link legacyBehavior href="/product-details">
+              {title}
+            </Link>
           </h3>
         </div>
       </td>

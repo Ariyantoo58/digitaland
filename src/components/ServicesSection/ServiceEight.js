@@ -1,7 +1,7 @@
-import { serviceEight } from "@/data/servicesSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { serviceEight } from '@/data/servicesSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const { text, title, services } = serviceEight;
 
@@ -19,7 +19,9 @@ const ServiceEight = () => {
               <div className="service-eight__card">
                 <div className="service-eight__card__inner">
                   <h3 className="service-eight__title">
-                    <Link href={href}>{title}</Link>
+                    <Link legacyBehavior href={href}>
+                      {title}
+                    </Link>
                   </h3>
                   <div className="service-eight__icon">
                     <i className={icon}></i>

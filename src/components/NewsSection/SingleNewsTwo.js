@@ -1,7 +1,7 @@
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
-import { SwiperSlide } from "swiper/react";
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
+import { SwiperSlide } from 'swiper/react';
 
 const SingleNewsTwo = ({ news = {} }) => {
   const { image, date, comments, title } = news;
@@ -18,16 +18,20 @@ const SingleNewsTwo = ({ news = {} }) => {
         <div className="news-two__content">
           <ul className="list-unstyled news-two__meta">
             <li>
-              <Link href="/blog-single">{date}</Link>
+              <Link legacyBehavior href="/blog-single">
+                {date}
+              </Link>
             </li>
             <li>
-              <Link href="/blog-single">
+              <Link legacyBehavior href="/blog-single">
                 <a>{comments} Comments</a>
               </Link>
             </li>
           </ul>
           <h3>
-            <Link href="/blog-single">{title}</Link>
+            <Link legacyBehavior href="/blog-single">
+              {title}
+            </Link>
           </h3>
         </div>
       </div>

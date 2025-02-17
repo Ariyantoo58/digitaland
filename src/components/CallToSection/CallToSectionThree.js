@@ -1,9 +1,9 @@
-import { callToSectionThree } from "@/data/callToSection";
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import React from "react";
-import JarallaxImage from "../Jarallax/JarallaxImage";
-const Jarallax = dynamic(() => import("../Jarallax/Jarallax"), { ssr: false });
+import { callToSectionThree } from '@/data/callToSection';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import React from 'react';
+import JarallaxImage from '../Jarallax/JarallaxImage';
+const Jarallax = dynamic(() => import('../Jarallax/Jarallax'), { ssr: false });
 
 const { bg, title } = callToSectionThree;
 
@@ -18,7 +18,7 @@ const CallToSectionThree = () => {
       <div className="auto-container">
         <h3>{title}</h3>
         <div className="button-wrap">
-          <Link href="/about">
+          <Link legacyBehavior href="/about">
             <a className="theme-btn btn-style-three">Discover More</a>
           </Link>
         </div>

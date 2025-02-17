@@ -1,7 +1,7 @@
-import { sidebar } from "@/data/sidebarPageContainer";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React from "react";
+import { sidebar } from '@/data/sidebarPageContainer';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 const { title, title2, text, phone, navItems } = sidebar;
 
@@ -17,8 +17,10 @@ const SidebarSide = () => {
           </div>
           <ul>
             {navItems.map(({ id, href, title }) => (
-              <li key={id} className={pathname === href ? "active" : ""}>
-                <Link href={href}>{title}</Link>
+              <li key={id} className={pathname === href ? 'active' : ''}>
+                <Link legacyBehavior href={href}>
+                  {title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -32,7 +34,7 @@ const SidebarSide = () => {
           </div>
           <div className="text">{text}</div>
           <div className="phone">
-            <a href={`tel:${phone.split(" ").join("")}`}>
+            <a href={`tel:${phone.split(' ').join('')}`}>
               <span className="icon flaticon-call"></span>
               {phone}
             </a>

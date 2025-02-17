@@ -1,8 +1,8 @@
-import { mainFooter } from "@/data/mainFooter";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { mainFooter } from '@/data/mainFooter';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const { year, author, logo7, about2, socials, links, email, phone, address } =
   mainFooter;
@@ -19,7 +19,7 @@ const FooterSeven = () => {
                   <Image src={logo7.src} width={134} alt="" />
                 </a>
                 <p className="footer-seven__about__text">
-                  <a href={`tel:${phone.split(" ").join("-")}`}>{phone}</a>{" "}
+                  <a href={`tel:${phone.split(' ').join('-')}`}>{phone}</a>{' '}
                   <br />
                   <a href={`mailto:${email}`}>{email}</a> <br />
                   <TextSplit text={address} />
@@ -32,7 +32,9 @@ const FooterSeven = () => {
                 <ul className="list-unstyled footer-seven__links__list">
                   {links.slice(0, 5).map(({ id, href, title }) => (
                     <li key={id}>
-                      <Link href={href}>{title}</Link>
+                      <Link legacyBehavior href={href}>
+                        {title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -44,7 +46,9 @@ const FooterSeven = () => {
                 <ul className="list-unstyled footer-seven__links__list">
                   {links.slice(5).map(({ id, href, title }) => (
                     <li key={id}>
-                      <Link href={href}>{title}</Link>
+                      <Link legacyBehavior href={href}>
+                        {title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -56,7 +60,9 @@ const FooterSeven = () => {
                 <ul className="list-unstyled footer-seven__links__list">
                   {links.slice(2, 6).map(({ id, href, title }) => (
                     <li key={id}>
-                      <Link href={href}>{title}</Link>
+                      <Link legacyBehavior href={href}>
+                        {title}
+                      </Link>
                     </li>
                   ))}
                 </ul>

@@ -1,8 +1,8 @@
-import portfolioMasonary from "@/data/portfolioMasonary";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Col, Image } from "react-bootstrap";
-import Masonry from "react-masonry-component";
+import portfolioMasonary from '@/data/portfolioMasonary';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { Col, Image } from 'react-bootstrap';
+import Masonry from 'react-masonry-component';
 
 const masonryOptions = {
   transitionDuration: 500,
@@ -16,7 +16,7 @@ const getCurrent = (current) =>
 const getCount = (current) => getCurrent(current).length;
 
 const PortfolioMasonary = () => {
-  const [current, setCurrent] = useState("filter-item");
+  const [current, setCurrent] = useState('filter-item');
   const currentPortfolio = getCurrent(current);
 
   return (
@@ -31,7 +31,7 @@ const PortfolioMasonary = () => {
               <li
                 key={id}
                 onClick={() => setCurrent(filter)}
-                className={`${current === filter ? "active " : ""}filter`}
+                className={`${current === filter ? 'active ' : ''}filter`}
                 data-role="button"
               >
                 {name} <sup>[{getCount(filter)}]</sup>
@@ -39,7 +39,7 @@ const PortfolioMasonary = () => {
             ))}
           </ul>
 
-          <Link href="/portfolio">
+          <Link legacyBehavior href="/portfolio">
             <a className="portfolio-masonary__more">View All</a>
           </Link>
         </div>
@@ -52,7 +52,7 @@ const PortfolioMasonary = () => {
             <Col
               key={id}
               lg={6}
-              className={`masonary-item position-absolute ${filter.join(" ")}`}
+              className={`masonary-item position-absolute ${filter.join(' ')}`}
             >
               <div className="portfolio-masonary__box">
                 <Image
@@ -62,7 +62,9 @@ const PortfolioMasonary = () => {
                 <div className="portfolio-masonary__box-content">
                   <p>{tagline}</p>
                   <h4>
-                    <Link href="/portfolio-single">{title}</Link>
+                    <Link legacyBehavior href="/portfolio-single">
+                      {title}
+                    </Link>
                   </h4>
                 </div>
               </div>
@@ -71,7 +73,7 @@ const PortfolioMasonary = () => {
         </Masonry>
 
         <div className="text-center">
-          <Link href="/about">
+          <Link legacyBehavior href="/about">
             <a className="theme-btn btn-style-one">
               <i className="btn-curve"></i>
               <span className="btn-title">Discover More</span>

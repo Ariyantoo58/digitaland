@@ -1,7 +1,7 @@
-import { socials } from "@/data/header";
-import Link from "next/link";
-import React from "react";
-import { Col, Image } from "react-bootstrap";
+import { socials } from '@/data/header';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image } from 'react-bootstrap';
 
 const SingleTeamPage = ({ team = {} }) => {
   const { image, name, designation } = team;
@@ -10,7 +10,7 @@ const SingleTeamPage = ({ team = {} }) => {
     <Col lg={4} md={6} sm={12} className="team-block">
       <div className="inner-box">
         <div className="image-box">
-          <Link href="/about">
+          <Link legacyBehavior href="/about">
             <a>
               <Image
                 src={require(`@/images/resource/${image}`).default.src}

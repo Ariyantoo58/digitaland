@@ -1,8 +1,8 @@
-import { sidebar } from "@/data/sidebarPageContainerTwo";
-import Link from "next/link";
-import React, { Fragment } from "react";
-import { Image } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { sidebar } from '@/data/sidebarPageContainerTwo';
+import Link from 'next/link';
+import React, { Fragment } from 'react';
+import { Image } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const { categories, tags, comments, posts } = sidebar;
 
@@ -10,7 +10,7 @@ const SidebarSide = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("search"));
+    console.log(formData.get('search'));
   };
 
   return (
@@ -63,7 +63,9 @@ const SidebarSide = () => {
           <ul>
             {categories.map(({ id, title, href }) => (
               <li key={id}>
-                <Link href={href}>{title}</Link>
+                <Link legacyBehavior href={href}>
+                  {title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -79,7 +81,7 @@ const SidebarSide = () => {
             {tags.map(({ id, title, href }) => (
               <Fragment key={id}>
                 <a href={href}>{title}</a>
-                {tags.length !== id && ", "}
+                {tags.length !== id && ', '}
               </Fragment>
             ))}
           </div>

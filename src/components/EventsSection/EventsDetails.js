@@ -1,8 +1,8 @@
-import { eventsDetails } from "@/data/eventsSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { eventsDetails } from '@/data/eventsSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const {
   date,
@@ -32,7 +32,7 @@ const EventsDetails = () => {
               {texts.map((text, i) => (
                 <p key={i}>{text}</p>
               ))}
-              <Link href="/contact">
+              <Link legacyBehavior href="/contact">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Register Now</span>
@@ -62,7 +62,7 @@ const EventsDetails = () => {
                     <li>
                       <strong>Phone</strong>
                       <span>
-                        <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
+                        <a href={`tel:${phone.split(' ').join('')}`}>{phone}</a>
                       </span>
                     </li>
                     <li>

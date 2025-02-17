@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React, { forwardRef } from "react";
-import { Image } from "react-bootstrap";
+import Link from 'next/link';
+import React, { forwardRef } from 'react';
+import { Image } from 'react-bootstrap';
 
 const SinglePortfolio = ({ portfolio = {} }, ref) => {
   const { image, category, title } = portfolio;
@@ -19,7 +19,9 @@ const SinglePortfolio = ({ portfolio = {} }, ref) => {
         </a>
         <span className="portfolio-horizontal__category">{category}</span>
         <h3 className="portfolio-horizontal__card__title">
-          <Link href="/portfolio-single-3">{title}</Link>
+          <Link legacyBehavior href="/portfolio-single-3">
+            {title}
+          </Link>
         </h3>
       </div>
     </div>

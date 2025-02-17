@@ -41,7 +41,7 @@ const HomeDark = () => {
       <LiveSection />
       <WeDOSection />
       <GallerySectionOne />
-      <FunFactsOne />
+      {/* <FunFactsOne /> */}
       <TrustedSection />
       <TeamSection />
       <ParallaxSection />

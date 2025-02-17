@@ -1,10 +1,10 @@
-import featuresSection from "@/data/featuresSection";
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import React from "react";
-import JarallaxImage from "../Jarallax/JarallaxImage";
-import TextSplit from "../Reuseable/TextSplit";
-const Jarallax = dynamic(() => import("../Jarallax/Jarallax"), { ssr: false });
+import featuresSection from '@/data/featuresSection';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import React from 'react';
+import JarallaxImage from '../Jarallax/JarallaxImage';
+import TextSplit from '../Reuseable/TextSplit';
+const Jarallax = dynamic(() => import('../Jarallax/Jarallax'), { ssr: false });
 
 const { bg, title, features } = featuresSection;
 
@@ -33,7 +33,7 @@ const FeaturesSection = () => {
             ))}
           </div>
           <div className="link-box">
-            <Link href="/about">
+            <Link legacyBehavior href="/about">
               <a className="theme-btn btn-style-one">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Discover More</span>

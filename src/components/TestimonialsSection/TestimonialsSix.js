@@ -1,19 +1,18 @@
-import { testimonialsSix } from "@/data/testimonialsSection";
-import React from "react";
-import SwiperCore, { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import TextSplit from "../Reuseable/TextSplit";
-
-SwiperCore.use([Autoplay, Pagination]);
+import { testimonialsSix } from '@/data/testimonialsSection';
+import React from 'react';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import TextSplit from '../Reuseable/TextSplit';
 
 const options = {
   slidesPerView: 1,
   loop: true,
   pagination: {
-    el: "#testimonials-six-pagination",
-    type: "bullets",
+    el: '#testimonials-six-pagination',
+    type: 'bullets',
     clickable: true,
   },
+  module: [Autoplay, Pagination],
   autoplay: { delay: 5000 },
 };
 

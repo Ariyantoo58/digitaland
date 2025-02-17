@@ -1,8 +1,8 @@
-import { useRootContext } from "@/context/context";
-import headerData from "@/data/header";
-import Link from "next/link";
-import React from "react";
-import { Image } from "react-bootstrap";
+import { useRootContext } from '@/context/context';
+import headerData from '@/data/header';
+import Link from 'next/link';
+import React from 'react';
+import { Image } from 'react-bootstrap';
 
 const { title, phone, socials, logo6, email } = headerData;
 
@@ -13,7 +13,7 @@ const HeaderSix = () => {
     <header className="header-six">
       <div className="auto-container">
         <div className="header-six__logo">
-          <Link href="/index-main">
+          <Link legacyBehavior href="/index-main">
             <a>
               <Image src={logo6.src} width={134} alt={title} />
             </a>
@@ -35,7 +35,7 @@ const HeaderSix = () => {
 
         <div className="header-six__info">
           <a
-            href={`tel:${phone.split(" ").join("")}`}
+            href={`tel:${phone.split(' ').join('')}`}
             className="header-six__info__link"
           >
             <i className="flaticon-call"></i>

@@ -1,14 +1,14 @@
-import newsSection from "@/data/newsSection";
-import useActive from "@/hooks/useActive";
-import Link from "next/link";
-import React from "react";
-import { Row } from "react-bootstrap";
-import SingleNews from "./SingleNews";
+import newsSection from '@/data/newsSection';
+import useActive from '@/hooks/useActive';
+import Link from 'next/link';
+import React from 'react';
+import { Row } from 'react-bootstrap';
+import SingleNews from './SingleNews';
 
 const { title, newsData } = newsSection;
 
-const NewsSection = ({ className = "", showTitle = true, isMore = false }) => {
-  const ref = useActive("#blog");
+const NewsSection = ({ className = '', showTitle = true, isMore = false }) => {
+  const ref = useActive('#blog');
 
   return (
     <section ref={ref} className={`news-section ${className}`} id="blog">
@@ -29,7 +29,7 @@ const NewsSection = ({ className = "", showTitle = true, isMore = false }) => {
         </Row>
         {isMore && (
           <div className="more-box">
-            <Link href="/blog">
+            <Link legacyBehavior href="/blog">
               <a className="theme-btn btn-style-one">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Load more posts</span>

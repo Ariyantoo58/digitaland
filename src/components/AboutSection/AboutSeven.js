@@ -1,7 +1,7 @@
-import { aboutSeven } from "@/data/aboutSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { aboutSeven } from '@/data/aboutSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const { images, tagline, title, text, title2, lists } = aboutSeven;
 
@@ -35,8 +35,8 @@ const AboutSeven = () => {
                   </li>
                 ))}
               </ul>
-              <Link href="/about">
-                <a className="about-seven__btn thm-btn__six">Discover More</a>
+              <Link legacyBehavior href="/about">
+                Discover More
               </Link>
             </div>
           </Col>

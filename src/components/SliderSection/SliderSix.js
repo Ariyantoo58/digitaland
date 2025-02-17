@@ -1,28 +1,27 @@
-import { sliderSix } from "@/data/slider";
-import React from "react";
+import { sliderSix } from '@/data/slider';
+import React from 'react';
 import SwiperCore, {
   Autoplay,
   EffectFade,
   Navigation,
   Pagination,
-} from "swiper";
-import { Swiper } from "swiper/react";
-import SingleSlideSix from "./SingleSlideSix";
-
-SwiperCore.use([Autoplay, Pagination, Navigation, EffectFade]);
+} from 'swiper';
+import { Swiper } from 'swiper/react';
+import SingleSlideSix from './SingleSlideSix';
 
 const options = {
   slidesPerView: 1,
   loop: true,
-  effect: "fade",
+  effect: 'fade',
   pagination: {
-    el: "#main-slider-pagination",
-    type: "bullets",
+    el: '#main-slider-pagination',
+    type: 'bullets',
     clickable: true,
   },
+  module: [Autoplay, Pagination, Navigation, EffectFade],
   navigation: {
-    nextEl: "#main-slider__swiper-button-next",
-    prevEl: "#main-slider__swiper-button-prev",
+    nextEl: '#main-slider__swiper-button-next',
+    prevEl: '#main-slider__swiper-button-prev',
   },
   autoplay: { delay: 5000 },
 };

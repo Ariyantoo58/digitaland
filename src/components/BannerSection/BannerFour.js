@@ -24,7 +24,10 @@ const BannerFour = () => {
           <TextSplit text={title} />
         </h2>
         <p className="banner-four__text">
-          {text} <Link href="/about">html template</Link>
+          {text}{' '}
+          <Link legacyBehavior href="/about">
+            html template
+          </Link>
         </p>
 
         <a

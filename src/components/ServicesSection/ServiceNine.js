@@ -1,7 +1,7 @@
-import { serviceNine } from "@/data/servicesSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { serviceNine } from '@/data/servicesSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const ServiceNine = () => {
   return (
@@ -26,10 +26,12 @@ const ServiceNine = () => {
                       <i className={icon}></i>
                     </div>
                     <h3 className="service-nine__title">
-                      <Link href={href}>{title}</Link>
+                      <Link legacyBehavior href={href}>
+                        {title}
+                      </Link>
                     </h3>
                     <p className="service-nine__text">{text}</p>
-                    <Link href={href}>
+                    <Link legacyBehavior href={href}>
                       <a className="service-nine__link">
                         <i className="fa fa-angle-right"></i>
                       </a>

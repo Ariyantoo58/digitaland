@@ -1,7 +1,7 @@
-import { mainFooter } from "@/data/mainFooter";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { mainFooter } from '@/data/mainFooter';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
 
 const { year, author, logo6, about2, socials, links } = mainFooter;
 
@@ -9,7 +9,7 @@ const FooterSix = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("email"));
+    console.log(formData.get('email'));
   };
 
   return (
@@ -19,7 +19,7 @@ const FooterSix = () => {
           <Row>
             <Col sm={12} md={12} lg={3}>
               <div className="footer-six__widget footer-six__about">
-                <Link href="/">
+                <Link legacyBehavior href="/">
                   <a>
                     <Image src={logo6.src} width={135} alt="" />
                   </a>
@@ -41,14 +41,18 @@ const FooterSix = () => {
                   <ul className="footer-six__links__list__item">
                     {links.slice(0, 5).map(({ id, title, href }) => (
                       <li key={id}>
-                        <Link href={href}>{title}</Link>
+                        <Link legacyBehavior href={href}>
+                          {title}
+                        </Link>
                       </li>
                     ))}
                   </ul>
                   <ul className="footer-six__links__list__item">
                     {links.slice(5).map(({ id, title, href }) => (
                       <li key={id}>
-                        <Link href={href}>{title}</Link>
+                        <Link legacyBehavior href={href}>
+                          {title}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -72,7 +76,7 @@ const FooterSix = () => {
                     <i className="fa fa-paper-plane"></i>
                   </button>
                   <p>
-                    I agree to all <a href="#">terms and policies</a>{" "}
+                    I agree to all <a href="#">terms and policies</a>{' '}
                   </p>
                 </form>
               </div>

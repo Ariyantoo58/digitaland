@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Col, Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image } from 'react-bootstrap';
 
 const GalleryItem = ({ item = {} }) => {
   const { image, title, tagline, filter } = item;
@@ -10,7 +10,7 @@ const GalleryItem = ({ item = {} }) => {
       lg={4}
       md={6}
       sm={12}
-      className={`gallery-item position-absolute ${filter.join(" ")}`}
+      className={`gallery-item position-absolute ${filter.join(' ')}`}
     >
       <div className="inner-box">
         <figure className="image">
@@ -27,7 +27,9 @@ const GalleryItem = ({ item = {} }) => {
             </div>
             <div className="title">
               <h5>
-                <Link href="/portfolio-single">{title}</Link>
+                <Link legacyBehavior href="/portfolio-single">
+                  {title}
+                </Link>
               </h5>
             </div>
           </div>

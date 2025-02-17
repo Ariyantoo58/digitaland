@@ -1,7 +1,7 @@
-import { mainFooter } from "@/data/mainFooter";
-import Link from "next/link";
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { mainFooter } from '@/data/mainFooter';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const { links, phone, email, address3, subscribeText, year, author, socials } =
   mainFooter;
@@ -10,7 +10,7 @@ const FooterNine = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("email"));
+    console.log(formData.get('email'));
   };
 
   return (
@@ -43,7 +43,9 @@ const FooterNine = () => {
                     <ul className="list-unstyled footer-nine__links__list">
                       {links.slice(0, 5).map(({ id, href, title }) => (
                         <li key={id}>
-                          <Link href={href}>{title}</Link>
+                          <Link legacyBehavior href={href}>
+                            {title}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -53,7 +55,9 @@ const FooterNine = () => {
                     <ul className="list-unstyled footer-nine__links__list">
                       {links.slice(4).map(({ id, href, title }) => (
                         <li key={id}>
-                          <Link href={href}>{title}</Link>
+                          <Link legacyBehavior href={href}>
+                            {title}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -72,7 +76,7 @@ const FooterNine = () => {
                   </li>
                   <li>
                     <i className="fa fa-phone"></i>
-                    <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
+                    <a href={`tel:${phone.split(' ').join('')}`}>{phone}</a>
                   </li>
                 </ul>
               </div>

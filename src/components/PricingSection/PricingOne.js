@@ -1,7 +1,7 @@
-import { pricingOne } from "@/data/pricingSection";
-import Link from "next/link";
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { pricingOne } from '@/data/pricingSection';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const { allFeatures, pricing } = pricingOne;
 
@@ -25,15 +25,15 @@ const PricingOne = () => {
                         <i
                           className={
                             features.includes(feature)
-                              ? "flaticon-check"
-                              : "flaticon-delete unavailable"
+                              ? 'flaticon-check'
+                              : 'flaticon-delete unavailable'
                           }
                         ></i>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
+                  <Link legacyBehavior href="/contact">
                     <a className="theme-btn btn-style-one">
                       <i className="btn-curve"></i>
                       <span className="btn-title">Choose a plan</span>

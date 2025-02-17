@@ -1,10 +1,10 @@
-import { checkoutPage } from "@/data/checkoutPage";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import CustomSelect from "../Reuseable/CustomSelect";
+import { checkoutPage } from '@/data/checkoutPage';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import CustomSelect from '../Reuseable/CustomSelect';
 
-const options = ["USA", "Canada", "Australia"].map((it) => ({
+const options = ['USA', 'Canada', 'Australia'].map((it) => ({
   value: it,
   label: it,
 }));
@@ -13,8 +13,8 @@ const { inputs, checkoutMethods } = checkoutPage;
 
 const CheckoutPage = () => {
   const [currentCheckout, setCurrentCheckout] = useState(1);
-  const [country, setCountry] = useState("USA");
-  const [country2, setCountry2] = useState("USA");
+  const [country, setCountry] = useState('USA');
+  const [country2, setCountry2] = useState('USA');
 
   const handleSelectCountry = ({ value }) => {
     setCountry(value);
@@ -28,7 +28,10 @@ const CheckoutPage = () => {
     <section className="checkout-page">
       <div className="auto-container">
         <p className="checkout-page__returning">
-          Returning Customer? <Link href="/login">Click here to Login</Link>
+          Returning Customer?{' '}
+          <Link legacyBehavior href="/login">
+            Click here to Login
+          </Link>
         </p>
         <Row>
           <Col lg={6}>
@@ -150,8 +153,8 @@ const CheckoutPage = () => {
                   key={id}
                   className={`checkout__payment__item${
                     currentCheckout === id
-                      ? " checkout__payment__item--active"
-                      : ""
+                      ? ' checkout__payment__item--active'
+                      : ''
                   }`}
                 >
                   <h3
@@ -163,7 +166,7 @@ const CheckoutPage = () => {
                   </h3>
                   <div
                     className={`checkout__payment__content animated ${
-                      currentCheckout === id ? "d-block fadeInUp" : "d-none"
+                      currentCheckout === id ? 'd-block fadeInUp' : 'd-none'
                     }`}
                   >
                     {text}
@@ -172,7 +175,7 @@ const CheckoutPage = () => {
               ))}
             </div>
             <div className="text-right d-flex justify-content-end">
-              <Link href="/checkout">
+              <Link legacyBehavior href="/checkout">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Place your order</span>

@@ -1,9 +1,9 @@
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import React, { useRef } from "react";
-import { Image } from "react-bootstrap";
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import React, { useRef } from 'react';
+import { Image } from 'react-bootstrap';
 
-const TinySlider = dynamic(() => import("@/components/TinySlider/TinySlider"), {
+const TinySlider = dynamic(() => import('@/components/TinySlider/TinySlider'), {
   ssr: false,
 });
 
@@ -52,7 +52,7 @@ const responsive2 = {
 const settings = {
   loop: false,
   lazyload: true,
-  navPosition: "bottom",
+  navPosition: 'bottom',
   mouseDrag: true,
   items: 1,
   autoplay: true,
@@ -63,14 +63,14 @@ const settings = {
   autoplayButtonOutput: false,
 };
 
-const ProductTab = ({ tab = {}, current, carousel = "" }) => {
+const ProductTab = ({ tab = {}, current, carousel = '' }) => {
   const listRef = useRef(null);
 
   const { id, items } = tab;
 
   return (
-    <div className={`p-tab${current === id ? " active-tab" : ""}`} id={id}>
-      <div className={carousel || "project-carousel"}>
+    <div className={`p-tab${current === id ? ' active-tab' : ''}`} id={id}>
+      <div className={carousel || 'project-carousel'}>
         <TinySlider
           options={{
             ...settings,
@@ -100,7 +100,9 @@ const ProductTab = ({ tab = {}, current, carousel = "" }) => {
                     </div>
                     <div className="title">
                       <h5>
-                        <Link href="/portfolio-single">{title}</Link>
+                        <Link legacyBehavior href="/portfolio-single">
+                          {title}
+                        </Link>
                       </h5>
                     </div>
                   </div>

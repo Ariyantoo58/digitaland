@@ -1,8 +1,8 @@
-import { mainFooter } from "@/data/mainFooter";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
+import { mainFooter } from '@/data/mainFooter';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import TextSplit from '../Reuseable/TextSplit';
 
 const {
   year,
@@ -21,11 +21,11 @@ const MainFooter = ({ normalPadding = true }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("email"));
+    console.log(formData.get('email'));
   };
 
   return (
-    <footer className={`main-footer${normalPadding ? " normal-padding" : ""}`}>
+    <footer className={`main-footer${normalPadding ? ' normal-padding' : ''}`}>
       <div className="auto-container">
         <div className="widgets-section">
           <Row className="clearfix">
@@ -33,7 +33,7 @@ const MainFooter = ({ normalPadding = true }) => {
               <div className="footer-widget logo-widget">
                 <div className="widget-content">
                   <div className="logo">
-                    <Link href="/">
+                    <Link legacyBehavior href="/">
                       <a>
                         <Image id="fLogo" src={logo.src} alt="" />
                       </a>
@@ -61,7 +61,9 @@ const MainFooter = ({ normalPadding = true }) => {
                       <ul>
                         {links.slice(0, 5).map(({ id, href, title }) => (
                           <li key={id}>
-                            <Link href={href}>{title}</Link>
+                            <Link legacyBehavior href={href}>
+                              {title}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -70,7 +72,9 @@ const MainFooter = ({ normalPadding = true }) => {
                       <ul>
                         {links.slice(5).map(({ id, href, title }) => (
                           <li key={id}>
-                            <Link href={href}>{title}</Link>
+                            <Link legacyBehavior href={href}>
+                              {title}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -85,12 +89,12 @@ const MainFooter = ({ normalPadding = true }) => {
                   <h6>Contact</h6>
                   <ul className="contact-info">
                     <li className="address">
-                      <span className="icon flaticon-pin-1"></span>{" "}
+                      <span className="icon flaticon-pin-1"></span>{' '}
                       <TextSplit text={address} />
                     </li>
                     <li>
                       <span className="icon flaticon-call"></span>
-                      <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
+                      <a href={`tel:${phone.split(' ').join('')}`}>{phone}</a>
                     </li>
                     <li>
                       <span className="icon flaticon-email-2"></span>

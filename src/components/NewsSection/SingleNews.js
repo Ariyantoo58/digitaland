@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { Col, Image } from "react-bootstrap";
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image } from 'react-bootstrap';
 
 const SingleNews = ({ news = {} }) => {
   const { image, date, admin, comments, title, text } = news;
@@ -9,7 +9,7 @@ const SingleNews = ({ news = {} }) => {
     <Col lg={4} md={6} sm={12} className="news-block animated fadeInUp">
       <div className="inner-box">
         <div className="image-box">
-          <Link href="/blog-single">
+          <Link legacyBehavior href="/blog-single">
             <a>
               <Image
                 src={require(`@/images/resource/${image}`).default.src}
@@ -33,11 +33,13 @@ const SingleNews = ({ news = {} }) => {
             </ul>
           </div>
           <h5>
-            <Link href="/blog-single">{title}</Link>
+            <Link legacyBehavior href="/blog-single">
+              {title}
+            </Link>
           </h5>
           <div className="text">{text}</div>
           <div className="link-box">
-            <Link href="/blog-single">
+            <Link legacyBehavior href="/blog-single">
               <a className="theme-btn">
                 <span className="flaticon-next-1"></span>
               </a>

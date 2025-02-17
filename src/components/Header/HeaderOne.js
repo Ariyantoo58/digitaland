@@ -89,7 +89,7 @@ const HeaderOne = ({
           >
             <div className="logo-box">
               <div className="logo">
-                <Link href="/">
+                <Link legacyBehavior href="/">
                   <a title={title}>
                     <Image
                       id="thm-logo"
@@ -132,7 +132,7 @@ const HeaderOne = ({
             {links && (
               <div className="other-links clearfix">
                 <div className="cart-btn">
-                  <Link href="/cart">
+                  <Link legacyBehavior href="/cart">
                     <a className="theme-btn cart-toggler">
                       <span className="flaticon-shopping-cart"></span>
                     </a>

@@ -1,15 +1,14 @@
-import { sliderSeven } from "@/data/slider";
-import React from "react";
-import SwiperCore, { Autoplay, EffectFade } from "swiper";
-import { Swiper } from "swiper/react";
-import SingleSliderSeven from "./SingleSliderSeven";
-
-SwiperCore.use([EffectFade, Autoplay]);
+import { sliderSeven } from '@/data/slider';
+import React from 'react';
+import SwiperCore, { Autoplay, EffectFade } from 'swiper';
+import { Swiper } from 'swiper/react';
+import SingleSliderSeven from './SingleSliderSeven';
 
 const options = {
   slidesPerView: 1,
   loop: true,
-  effect: "fade",
+  effect: 'fade',
+  module: [EffectFade, Autoplay],
   autoplay: { delay: 5000 },
 };
 

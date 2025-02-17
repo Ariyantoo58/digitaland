@@ -1,9 +1,9 @@
-import { comingSoonSection } from "@/data/comingSoonSection";
-import { socials } from "@/data/header";
-import Link from "next/link";
-import React from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import CountdownOne from "../Reuseable/CountdownOne";
+import { comingSoonSection } from '@/data/comingSoonSection';
+import { socials } from '@/data/header';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import CountdownOne from '../Reuseable/CountdownOne';
 
 const { bg, logo, logoTitle, title, text, formTitle, formText } =
   comingSoonSection;
@@ -12,7 +12,7 @@ const ComingSoonSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get("email"));
+    console.log(formData.get('email'));
   };
 
   return (
@@ -25,7 +25,7 @@ const ComingSoonSection = () => {
           <Col lg={7}>
             <div className="logo-box">
               <div className="logo">
-                <Link href="/">
+                <Link legacyBehavior href="/">
                   <a title={logoTitle}>
                     <Image
                       src={logo.src}

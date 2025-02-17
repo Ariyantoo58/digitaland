@@ -1,7 +1,7 @@
-import { useRootContext } from "@/context/context";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { useRootContext } from '@/context/context';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
 const SubItem = ({ subItem = {} }) => {
   const [active, setActive] = useState(false);
@@ -16,27 +16,27 @@ const SubItem = ({ subItem = {} }) => {
 
   return (
     <li
-      className={`${subItems?.length ? "dropdown" : ""} ${
-        pathname === href ? "current" : ""
+      className={`${subItems?.length ? 'dropdown' : ''} ${
+        pathname === href ? 'current' : ''
       }`}
     >
-      <Link href={href}>
+      <Link legacyBehavior href={href}>
         <a href={href}>
           {name} {isNew && <span>new</span>}
           {subItems?.length && (
             <div
               onClick={handleActive}
-              className={`dropdown-btn${active ? " open" : ""}`}
+              className={`dropdown-btn${active ? ' open' : ''}`}
             >
               <span className="fa fa-angle-right"></span>
             </div>
           )}
         </a>
       </Link>
-      <ul style={{ display: !menuStatus || active ? "block" : "none" }}>
+      <ul style={{ display: !menuStatus || active ? 'block' : 'none' }}>
         {subItems?.map((item) => (
           <li key={item.id}>
-            <Link href={item.href}>
+            <Link legacyBehavior href={item.href}>
               <a href={item.href}>
                 {item.name} {item.isNew && <span>new</span>}
               </a>
@@ -66,17 +66,17 @@ const NavItem = ({ navItem = {}, mobile = false, onePage = false }) => {
   };
 
   return (
-    <li className={`dropdown${current ? " current" : ""}`}>
-      <Link href={href}>
+    <li className={`dropdown${current ? ' current' : ''}`}>
+      <Link legacyBehavior href={href}>
         <a
-          onClick={() => mobile && href.includes("#") && toggleMenu()}
+          onClick={() => mobile && href.includes('#') && toggleMenu()}
           href={href}
         >
-          {name}{" "}
+          {name}{' '}
           {subNavItems.length > 0 && (
             <div
               onClick={handleActive}
-              className={`dropdown-btn${active ? " open" : ""}`}
+              className={`dropdown-btn${active ? ' open' : ''}`}
             >
               <span className="fa fa-angle-right"></span>
             </div>
@@ -86,7 +86,7 @@ const NavItem = ({ navItem = {}, mobile = false, onePage = false }) => {
       {subNavItems.length > 0 && (
         <ul
           style={{
-            display: !menuStatus || active ? "block" : "none",
+            display: !menuStatus || active ? 'block' : 'none',
           }}
         >
           {subNavItems.map((subItem) => (

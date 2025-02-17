@@ -1,16 +1,16 @@
-import { bannerOnePage } from "@/data/bannerSection";
-import useActive from "@/hooks/useActive";
-import dynamic from "next/dynamic";
-import Link from "next/link";
-import React, { useRef, useState } from "react";
-import VideoModal from "../VideoModal/VideoModal";
+import { bannerOnePage } from '@/data/bannerSection';
+import useActive from '@/hooks/useActive';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import React, { useRef, useState } from 'react';
+import VideoModal from '../VideoModal/VideoModal';
 
-const TinySlider = dynamic(() => import("@/components/TinySlider/TinySlider"), {
+const TinySlider = dynamic(() => import('@/components/TinySlider/TinySlider'), {
   ssr: false,
 });
 
 const settings = {
-  container: ".my-slider-16",
+  container: '.my-slider-16',
   loop: true,
   lazyload: true,
   nav: false,
@@ -19,7 +19,7 @@ const settings = {
   autoplay: true,
   autoHeight: true,
   controls: true,
-  controlsContainer: ".tns-controls",
+  controlsContainer: '.tns-controls',
   gutter: 0,
   autoplayButton: false,
   autoplayButtonOutput: false,
@@ -30,7 +30,7 @@ const BannerOnePage = () => {
 
   const listRef = useRef(null);
 
-  const ref = useActive("#home");
+  const ref = useActive('#home');
 
   return (
     <>
@@ -62,7 +62,7 @@ const BannerOnePage = () => {
                             Discover <br /> <span>{title}</span>
                           </h1>
                           <div className="link-box">
-                            <Link href="/about">
+                            <Link legacyBehavior href="/about">
                               <a className="theme-btn btn-style-one">
                                 <i className="btn-curve"></i>
                                 <span className="btn-title">Discover More</span>
@@ -98,7 +98,7 @@ const BannerOnePage = () => {
           </div>
         </div>
       </section>
-      <VideoModal isOpen={isOpen} setOpen={setOpen} id={"Get7rqXYrbQ"} />
+      <VideoModal isOpen={isOpen} setOpen={setOpen} id={'Get7rqXYrbQ'} />
     </>
   );
 };

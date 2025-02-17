@@ -1,7 +1,7 @@
-import { howItWorksPage } from "@/data/howItWorks";
-import Link from "next/link";
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { howItWorksPage } from '@/data/howItWorks';
+import Link from 'next/link';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const HowItWorksPage = () => {
   return (
@@ -14,10 +14,12 @@ const HowItWorksPage = () => {
                 <div className="how-it-works-card__inner">
                   <i className={`how-it-works-card__icon ${icon}`}></i>
                   <h3 className="how-it-works-card__title">
-                    <Link href={href}>{title}</Link>
+                    <Link legacyBehavior href={href}>
+                      {title}
+                    </Link>
                   </h3>
                   <p className="how-it-works-card__text">{text}</p>
-                  <Link href={href}>
+                  <Link legacyBehavior href={href}>
                     <a className="how-it-works-card__link">Read More</a>
                   </Link>
                 </div>

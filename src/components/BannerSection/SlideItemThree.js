@@ -1,12 +1,12 @@
-import Link from "next/link";
-import React, { forwardRef } from "react";
-import TextSplit from "../Reuseable/TextSplit";
+import Link from 'next/link';
+import React, { forwardRef } from 'react';
+import TextSplit from '../Reuseable/TextSplit';
 
 const SlideItemThree = ({ slide = {} }, ref) => {
   const { bg, title, text } = slide;
 
   return (
-    <div style={{ userSelect: "none" }} ref={ref} className="slide-item">
+    <div style={{ userSelect: 'none' }} ref={ref} className="slide-item">
       <div className="round-shape-1"></div>
       <div className="round-image">
         <div
@@ -27,7 +27,7 @@ const SlideItemThree = ({ slide = {} }, ref) => {
               </h1>
               <div className="text">{text}</div>
               <div className="link-box">
-                <Link href="/about">
+                <Link legacyBehavior href="/about">
                   <a className="theme-btn btn-style-two">
                     <i className="btn-curve"></i>
                     <span className="btn-title">Discover More</span>

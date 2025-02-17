@@ -1,10 +1,8 @@
-import { newsSectionTwo } from "@/data/newsSection";
-import React from "react";
-import SwiperCore, { Autoplay, Pagination } from "swiper";
-import { Swiper } from "swiper/react";
-import SingleNewsTwo from "./SingleNewsTwo";
-
-SwiperCore.use([Pagination, Autoplay]);
+import { newsSectionTwo } from '@/data/newsSection';
+import React from 'react';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import { Swiper } from 'swiper/react';
+import SingleNewsTwo from './SingleNewsTwo';
 
 const options = {
   slidesPerView: 1,
@@ -12,13 +10,14 @@ const options = {
   loop: true,
   slidesPerGroup: 2,
   pagination: {
-    el: "#news-two-pagination",
-    type: "bullets",
+    el: '#news-two-pagination',
+    type: 'bullets',
     clickable: true,
   },
   autoplay: {
     delay: 5000,
   },
+  module: [Pagination, Autoplay],
   breakpoints: {
     0: {
       slidesPerView: 1,

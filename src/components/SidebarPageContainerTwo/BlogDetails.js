@@ -1,8 +1,8 @@
-import { blogDetails } from "@/data/sidebarPageContainerTwo";
-import Link from "next/link";
-import React, { Fragment } from "react";
-import { Col, Image, Row } from "react-bootstrap";
-import CommentBox from "./CommentBox";
+import { blogDetails } from '@/data/sidebarPageContainerTwo';
+import Link from 'next/link';
+import React, { Fragment } from 'react';
+import { Col, Image, Row } from 'react-bootstrap';
+import CommentBox from './CommentBox';
 
 const {
   image,
@@ -32,7 +32,7 @@ const BlogDetails = () => {
       <div className="post-details">
         <div className="inner-box">
           <div className="image-box">
-            <Link href="/blog-single">
+            <Link legacyBehavior href="/blog-single">
               <a>
                 <Image src={image.src} alt="" />
               </a>
@@ -48,7 +48,7 @@ const BlogDetails = () => {
                   <span className="far fa-user-circle"></span> {admin}
                 </li>
                 <li>
-                  <span className="far fa-comments"></span> {comments.length}{" "}
+                  <span className="far fa-comments"></span> {comments.length}{' '}
                   Comments
                 </li>
               </ul>
@@ -62,20 +62,20 @@ const BlogDetails = () => {
         </div>
         <div className="info-row clearfix">
           <div className="tags-info">
-            <strong>Tags:</strong>{" "}
+            <strong>Tags:</strong>{' '}
             {tags.map((tag, i) => (
               <Fragment key={i}>
                 <a href="#">{tag}</a>
-                {tags.length !== i + 1 && ", "}
+                {tags.length !== i + 1 && ', '}
               </Fragment>
             ))}
           </div>
           <div className="cat-info">
-            <strong>Category:</strong>{" "}
+            <strong>Category:</strong>{' '}
             {category.map((cate, i) => (
               <Fragment key={i}>
                 <a href="#">{cate}</a>
-                {category.length !== i + 1 && ", "}
+                {category.length !== i + 1 && ', '}
               </Fragment>
             ))}
           </div>
