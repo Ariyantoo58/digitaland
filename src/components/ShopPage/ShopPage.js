@@ -6,13 +6,14 @@ import { Col, Row } from 'react-bootstrap';
 import CustomSelect from '../Reuseable/CustomSelect';
 import ProductCard from './ProductCard';
 import { supabaseClient } from 'src/config/supabaseClient';
+import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 
-const options = ['Sort by Price', 'Sort by Date', 'Sort by Ratings'].map(
-  (it) => ({
-    value: it,
-    label: it,
-  })
-);
+const options = [
+  { label: 'Sort by Price', value: 'price' },
+  { label: 'Sort by Date', value: 'created_at' },
+  { label: 'Sort by Ratings', value: 'stars' },
+];
 
 const { categories } = shopPage;
 
@@ -20,16 +21,54 @@ const ShopPage = () => {
   const [sliderValue, setSliderValue] = useState([30, 150]);
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState(null);
+  const [categories, setCategories] = useState([]);
 
-  const [sortBy, setSortBy] = useState('Sort by Price');
+  console.log(router.query.category, 'router');
+
+  const filters = {
+    category: 2,
+  };
+
+  const [sortBy, setSortBy] = useState('Sort by Pric');
 
   const fetchProducts = async () => {
     try {
       setLoading(true);
 
-      const { data, error } = await supabaseClient.from('products').select('*');
+      // Calculate offset
+      const from = (page - 1) * limit;
+      const to = from + limit - 1;
 
-      console.log(data, 'Datasupabaseee');
+      // Build base query
+      let query = supabaseClient.from('products').select('*');
+
+      if (router?.query?.category) {
+        query = query.eq('categoryId', router?.query?.category);
+      }
+
+      if (router?.query?.searchQuery) {
+        query = query.or(`title.ilike.%${router?.query?.searchQuery}%`);
+      }
+
+      // Get total count with filters
+
+      // // Fetch paginated data with filters
+      const res = await query
+        .range(from, to)
+        .select('*', { count: 'exact' })
+        .order(router?.query?.sort ? router.query.sort : 'id', {
+          ascending: false,
+        });
+
+      const { data, count, error } = res;
+
+      console.log(res, 'countt');
+
+      // if (error) throw error;
 
       if (error) throw error;
       setProducts(data);
@@ -40,23 +79,39 @@ const ShopPage = () => {
     }
   };
 
+  const getCategories = async () => {
+    const { data, error } = await supabaseClient.from('categories').select('*');
+    setCategories(data);
+  };
+
   const handleSelectSortBy = ({ value }) => {
-    setSortBy(value);
+    router.query.sort = value;
+    fetchProducts();
+    router.push(router);
   };
 
   const handleSlideChange = (value) => {
     setSliderValue(value);
   };
 
+  const handleCategory = (category) => {
+    router.query.category = category.id;
+    fetchProducts();
+    router.push(router);
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    console.log(formData.get('search'));
+    router.query.searchQuery = formData.get('search');
+    fetchProducts();
+    router.push(router);
   };
 
   useEffect(() => {
+    getCategories();
     fetchProducts();
-  }, []);
+  }, [router.isReady, router.query.category]);
 
   if (!products) {
     return 'LOADING ...';
@@ -70,7 +125,16 @@ const ShopPage = () => {
             <div className="shop-sidebar">
               <div className="shop-search shop-sidebar__single">
                 <form onSubmit={handleSearch}>
-                  <input type="text" placeholder="Search" name="search" />
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    name="search"
+                    defaultValue={
+                      router?.query?.searchQuery
+                        ? router?.query?.searchQuery
+                        : ''
+                    }
+                  />
                   <button type="submit">
                     <i className="flaticon-magnifying-glass"></i>
                   </button>
@@ -115,8 +179,8 @@ const ShopPage = () => {
                 <h3 className="shop-sidebar__title">Categories</h3>
                 <ul className="list-unstyled">
                   {categories.map((category, i) => (
-                    <li key={i}>
-                      <a href="#">{category}</a>
+                    <li key={i} onClick={() => handleCategory(category)}>
+                      <a>{category.name}</a>
                     </li>
                   ))}
                 </ul>
